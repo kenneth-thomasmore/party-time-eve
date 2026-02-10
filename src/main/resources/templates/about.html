@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <title>"Let's party!"</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body class="mx-4">
+<body class="mx-2 mt-2 ">
+<nav><a href="http://localhost:8080/home">home</a></nav>
 <h1>Over mij</h1>
 <p>who knows? I'm a mof cweatuwe</p>
-<ol>
+<ol class="aboutlist">
     <li th:text="${myname}"></li>
     <li th:text="${mystreet}"></li>
     <li th:text="${mytown}"></li>
-
 </ol>
-<a href="http://localhost:8080/home">home</a>
+<p th:text="|ik ben ${myname} en ik woon in ${mystreet} te ${mytown}|">fuck</p>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
