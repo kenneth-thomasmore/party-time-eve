@@ -1,8 +1,11 @@
-.home{
-    background-color:purple;
-    color:greenyellow;
-}
-
 .aboutlist{
     background-color: aqua;
 }
+
+body, .about{
+    background-color: #F1E9D2;
+}
+.dropdown-menu, nav{
+    background-color: #716751
+}
+

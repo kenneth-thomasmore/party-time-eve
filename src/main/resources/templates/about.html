@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>"Let's party!"</title>
@@ -7,8 +7,26 @@
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body class="mx-2 mt-2 ">
-<nav><a href="http://localhost:8080/home">home</a></nav>
+<body class="about">
+<nav class="navbar navbar-expand-lg navbar-dark py-3">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <h2 class="text-white">Let's Party!</h2>
+        <div  class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class ="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" th:href="@{/about}">about</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/home}">home</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid mx-2 mt-2"></div>
 <h1>Over mij</h1>
 <p>who knows? I'm a mof cweatuwe</p>
 <ol class="aboutlist">
