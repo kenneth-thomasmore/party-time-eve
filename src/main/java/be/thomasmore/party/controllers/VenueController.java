@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class VenueController {
 
 
-    @GetMapping({"/venuedetails"})
+    @GetMapping("/venuedetails")
     public String venuedetails (Model model){
         Venue ven1 = new Venue();
         ven1.setVenuename("defqon.1");
