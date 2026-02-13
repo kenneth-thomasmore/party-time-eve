@@ -2,8 +2,8 @@
     background-color: aqua;
 }
 
-body, .about{
-    background-color: #F1E9D2;
+body, .about, .bgsand{
+    background-color: #F1E9D2 !important; 
 }
 .dropdown-menu, nav{
     background-color: #716751
