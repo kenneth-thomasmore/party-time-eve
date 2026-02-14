@@ -39,7 +39,7 @@ public class ClientController {
             greetings = greetinghour + " " + clientFromDb.get().getName() + " , en welkom!";
         } else if (clientFromDb.get().getNrOfOrders() <10) {
             greetings = greetinghour + " " + clientFromDb.get().getName();
-        } else if (clientFromDb.get().getNrOfOrders() >10 && clientFromDb.get().getNrOfOrders() < 50) {
+        } else if (clientFromDb.get().getNrOfOrders() >=10 && clientFromDb.get().getNrOfOrders() < 50) {
             greetings = greetinghour + " beste " + clientFromDb.get().getName();
         } else if (clientFromDb.get().getNrOfOrders() >=50 && clientFromDb.get().getNrOfOrders() <80) {
             greetings = greetinghour + " allerliefste " + clientFromDb.get().getName();
