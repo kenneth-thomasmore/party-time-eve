@@ -1,6 +1,8 @@
 package be.thomasmore.party.controllers;
 
+import be.thomasmore.party.model.Client;
 import be.thomasmore.party.model.Venue;
+import be.thomasmore.party.repositories.ClientRepository;
 import be.thomasmore.party.repositories.VenueRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

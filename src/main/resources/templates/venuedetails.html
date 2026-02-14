@@ -59,24 +59,31 @@
         </p>
       </div>
 
-      <div class="container-fluid bg-light py-3 ">
-        <h1>Faciliteiten</h1>
-        <div class="row px-2 my-1">
-          <div class="col border rounded" th:text="| max *{capacity} personen|">capaciteit onbekend</div>
-            <div class="col border rounded" th:text="|*{distanceFromPublicTransportInKm} km afstand van openbaar vervoer|">afstand van openbaar vervoer onbekend</div>
-        </div>
-        <div class="row px-2 my-1">
-          <div class="col border rounded" th:text="*{foodProvided} ? 'eten voorzien:  ja' : 'eten voorzien:  nee'">onbekend of eten wordt voorzien</div>
-        <div class="col border rounded" th:text="*{indoor} ? 'binnen: ja' : 'binnen: nee'">onbekend of het binnen is</div>
-        </div>
-        <div class="row px-2 my-1">
-          <div class="col border rounded" th:text="*{outdoor} ? 'buiten: ja' : 'buiten: nee'">onbekend of het buiten is</div>
-          <div class="col border rounded" th:text="*{freeParkingAvailable} ? 'gratis parking: ja' : 'gratis parking: nee'">onbekend of er gratis parking is. </div>
-        </div>
-      </div>
+      <div class="container-fluid bg-light py-1 ">
+          <div class="row">
+            <div class="col">
+                <img th:src="@{/img/she-past-away-cover.webp}" alt="shepastaway.webp" class="img-fluid mx-0 px-0" style="width:75%;height: auto; ">
+            </div>
+                    <div class="col">
+            <h1>Faciliteiten</h1>
+            <div class="row px-2 my-1">
+              <div class="col border rounded" th:text="| max *{capacity} personen|">capaciteit onbekend</div>
+                <div class="col border rounded" th:text="|*{distanceFromPublicTransportInKm} km afstand van openbaar vervoer|">afstand van openbaar vervoer onbekend</div>
+            </div>
+            <div class="row px-2 my-1">
+              <div class="col border rounded" th:text="*{foodProvided} ? 'eten voorzien:  ja' : 'eten voorzien:  nee'">onbekend of eten wordt voorzien</div>
+            <div class="col border rounded" th:text="*{indoor} ? 'binnen: ja' : 'binnen: nee'">onbekend of het binnen is</div>
+            </div>
+            <div class="row px-2 my-1">
+              <div class="col border rounded" th:text="*{outdoor} ? 'buiten: ja' : 'buiten: nee'">onbekend of het buiten is</div>
+              <div class="col border rounded" th:text="*{freeParkingAvailable} ? 'gratis parking: ja' : 'gratis parking: nee'">onbekend of er gratis parking is. </div>
+            </div>
+                  </div>
+                    </div>
+          </div>
     </main>
 
-    <footer class="fixed-bottom border rounded text-center">
+    <footer class="footer border rounded text-center mt-4" style="background-color: crimson;">
       <h2>©beepboop inc.</h2>
     </footer>
     <script
