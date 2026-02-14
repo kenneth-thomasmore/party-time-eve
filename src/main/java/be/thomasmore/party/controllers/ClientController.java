@@ -50,16 +50,40 @@ public class ClientController {
         return greetings;
     }
 
-    //this is a comment because making this a helper makes 0 motherfucking sense!
+    private double calculatediscount(){
+        double discount =  0;
+        Optional<Client> clientFromDb = clientRepository.findById(1);
+
+        if (clientFromDb.get().getNrOfOrders() <50) {
+            discount = 0;
+        } else {
+            discount = clientFromDb.get().getTotalAmount() * 0.005;
+        }
+        return discount;
+    }
 
     @GetMapping("/clientgreeting")
     public String clientgreeting(Model model){
+//        Optional<Client> clientFromDb = clientRepository.findById(1);
+//        if (clientFromDb.isPresent()){
+//            model.addAttribute("client",clientFromDb.get());
+//        }
+        model.addAttribute(greeting());
+        return "clientgreeting";
+    }
+
+    @GetMapping("/clientdetails")
+    public String clientdetails(Model model){
         Optional<Client> clientFromDb = clientRepository.findById(1);
         if (clientFromDb.isPresent()){
             model.addAttribute("client",clientFromDb.get());
         }
-        model.addAttribute(greeting());
+        model.addAttribute(calculatediscount());
+        return "clientdetails";
+    }
 
-        return "clientgreeting";
+    @GetMapping("/clienthome")
+    public String clienthome(Model model){
+        return "clienthome";
     }
 }
