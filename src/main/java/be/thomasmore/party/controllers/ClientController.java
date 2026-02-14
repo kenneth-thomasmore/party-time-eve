@@ -2,12 +2,14 @@ package be.thomasmore.party.controllers;
 
 import be.thomasmore.party.model.Client;
 import be.thomasmore.party.repositories.ClientRepository;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalTime;
 import java.util.Optional;
 
+@Controller
 public class ClientController {
     private ClientRepository clientRepository;
 
@@ -20,15 +22,15 @@ public class ClientController {
 
     private String greeting (){
         Optional<Client> clientFromDb = clientRepository.findById(1);
-        String greetinghour = "";
+        String greetinghour;
         String greetings = "";
         LocalTime time = LocalTime.now();
         //-------changes the greeting depending on the hour
-        if (time.isBefore(LocalTime.NOON) && time.isAfter(LocalTime.of(6,00))){
+        if (time.isBefore(LocalTime.NOON) && time.isAfter(LocalTime.of(6,0))){
             greetinghour = "Goedemorgen";
-        } else if (time.isAfter(LocalTime.NOON)&& time.isBefore(LocalTime.of(17,00))) {
+        } else if (time.isAfter(LocalTime.NOON)&& time.isBefore(LocalTime.of(17,0))) {
             greetinghour = "Goedemiddag";
-        } else if (time.isAfter(LocalTime.of(17,00)) && time.isBefore(LocalTime.of(22,00))) {
+        } else if (time.isAfter(LocalTime.of(17,0)) && time.isBefore(LocalTime.of(22,0))) {
             greetinghour = "Goedenavond";
         } else greetinghour= "Goedennacht";
 
@@ -64,11 +66,11 @@ public class ClientController {
 
     @GetMapping("/clientgreeting")
     public String clientgreeting(Model model){
-//        Optional<Client> clientFromDb = clientRepository.findById(1);
-//        if (clientFromDb.isPresent()){
-//            model.addAttribute("client",clientFromDb.get());
-//        }
-        model.addAttribute(greeting());
+        Optional<Client> clientFromDb = clientRepository.findById(1);
+        if (clientFromDb.isPresent()){
+            model.addAttribute("client",clientFromDb.get());
+        }
+        model.addAttribute("greeting",greeting());
         return "clientgreeting";
     }
 
@@ -78,7 +80,7 @@ public class ClientController {
         if (clientFromDb.isPresent()){
             model.addAttribute("client",clientFromDb.get());
         }
-        model.addAttribute(calculatediscount());
+        model.addAttribute("discount",calculatediscount());
         return "clientdetails";
     }
 
