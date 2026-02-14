@@ -56,7 +56,7 @@ public class ClientController {
         double discount =  0;
         Optional<Client> clientFromDb = clientRepository.findById(1);
 
-        if (clientFromDb.get().getNrOfOrders() <50) {
+        if (clientFromDb.get().getTotalAmount() <50) {
             discount = 0;
         } else {
             discount = clientFromDb.get().getTotalAmount() * 0.005;
